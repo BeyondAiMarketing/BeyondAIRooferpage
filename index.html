@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond AI Marketing - Roofing Industry Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <h1>Beyond AI Marketing</h1>
+                        <p class="tagline">Roofing Industry AI Solutions</p>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#audit">Live Audit</a></li>
+                        <li><a href="#demo">Live Demo</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Transform Your Roofing Business with AI-Powered Marketing</h2>
+                <p class="hero-subtitle">Get real-time insights, live demos, and cutting-edge solutions designed specifically for the roofing industry</p>
+                <div class="hero-buttons">
+                    <a href="#audit" class="btn btn-primary">Start Live Audit</a>
+                    <a href="#demo" class="btn btn-secondary">Watch Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Audit Section -->
+    <section id="audit" class="section audit-section">
+        <div class="container">
+            <h2 class="section-title">Live Website Audit</h2>
+            <p class="section-subtitle">Get instant AI-powered insights about your roofing company's online presence</p>
+            
+            <div class="audit-tool">
+                <div class="audit-input-group">
+                    <input 
+                        type="url" 
+                        id="auditUrl" 
+                        class="audit-input" 
+                        placeholder="Enter your website URL (e.g., https://yoursite.com)"
+                        aria-label="Website URL for audit"
+                    >
+                    <button id="runAuditBtn" class="btn btn-primary">Run Audit</button>
+                </div>
+                
+                <div id="auditLoading" class="audit-loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing your website...</p>
+                </div>
+
+                <div id="auditResults" class="audit-results" style="display: none;">
+                    <h3>Audit Results</h3>
+                    <div class="audit-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon">🎯</div>
+                            <h4>SEO Score</h4>
+                            <div class="metric-value" id="seoScore">--</div>
+                            <p class="metric-label">Search Engine Optimization</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">⚡</div>
+                            <h4>Performance</h4>
+                            <div class="metric-value" id="performanceScore">--</div>
+                            <p class="metric-label">Page Load Speed</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">📱</div>
+                            <h4>Mobile Ready</h4>
+                            <div class="metric-value" id="mobileScore">--</div>
+                            <p class="metric-label">Mobile Responsiveness</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">💼</div>
+                            <h4>Lead Generation</h4>
+                            <div class="metric-value" id="leadScore">--</div>
+                            <p class="metric-label">Conversion Optimization</p>
+                        </div>
+                    </div>
+                    
+                    <div class="audit-recommendations">
+                        <h4>Key Recommendations</h4>
+                        <ul id="recommendationsList"></ul>
+                    </div>
+
+                    <div class="audit-cta">
+                        <p>Want detailed insights and a custom strategy?</p>
+                        <a href="#contact" class="btn btn-primary">Get Full Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="section demo-section">
+        <div class="container">
+            <h2 class="section-title">Live Demo</h2>
+            <p class="section-subtitle">Experience our AI-powered solutions in action</p>
+            
+            <div class="demo-container">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-demo="chatbot">AI Chatbot</button>
+                    <button class="demo-tab" data-demo="lead">Lead Capture</button>
+                    <button class="demo-tab" data-demo="content">Content Generator</button>
+                </div>
+
+                <div class="demo-content">
+                    <!-- Chatbot Demo -->
+                    <div id="demo-chatbot" class="demo-panel active">
+                        <div class="demo-description">
+                            <h3>AI-Powered Roofing Chatbot</h3>
+                            <p>Our intelligent chatbot engages visitors 24/7, answers common roofing questions, and captures qualified leads automatically.</p>
+                        </div>
+                        <div class="demo-interactive">
+                            <div class="chatbot-demo">
+                                <div class="chat-header">
+                                    <div class="chat-status">
+                                        <span class="status-dot"></span>
+                                        <span>Online</span>
+                                    </div>
+                                    <h4>Roofing Assistant</h4>
+                                </div>
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="message bot-message">
+                                        <p>👋 Hi! I'm your roofing assistant. How can I help you today?</p>
+                                    </div>
+                                </div>
+                                <div class="chat-input-group">
+                                    <input type="text" id="chatInput" placeholder="Ask about roofing services..." class="chat-input">
+                                    <button id="sendChatBtn" class="btn-chat">Send</button>
+                                </div>
+                                <div class="quick-questions">
+                                    <p>Try asking:</p>
+                                    <button class="quick-btn" data-question="How much does a new roof cost?">Roof pricing</button>
+                                    <button class="quick-btn" data-question="What types of roofing do you offer?">Roofing types</button>
+                                    <button class="quick-btn" data-question="Do you offer free estimates?">Free estimates</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Capture Demo -->
+                    <div id="demo-lead" class="demo-panel">
+                        <div class="demo-description">
+                            <h3>Smart Lead Capture System</h3>
+                            <p>Maximize conversions with intelligent forms that adapt to user behavior and capture high-quality leads.</p>
+                        </div>
+                        <div class="demo-interactive">
+                            <div class="lead-form-demo">
+                                <form id="demoLeadForm" class="lead-form">
+                                    <h4>Get Your Free Roof Estimate</h4>
+                                    <div class="form-group">
+                                        <label for="demoName">Name</label>
+                                        <input type="text" id="demoName" placeholder="John Smith" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demoEmail">Email</label>
+                                        <input type="email" id="demoEmail" placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demoPhone">Phone</label>
+                                        <input type="tel" id="demoPhone" placeholder="(555) 123-4567" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demoService">Service Needed</label>
+                                        <select id="demoService" required>
+                                            <option value="">Select a service...</option>
+                                            <option value="repair">Roof Repair</option>
+                                            <option value="replacement">Roof Replacement</option>
+                                            <option value="inspection">Roof Inspection</option>
+                                            <option value="maintenance">Maintenance</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Get Free Estimate</button>
+                                </form>
+                                <div id="leadSuccessMessage" class="success-message" style="display: none;">
+                                    <div class="success-icon">✓</div>
+                                    <h4>Lead Captured Successfully!</h4>
+                                    <p>This is how we convert your website visitors into qualified leads.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Generator Demo -->
+                    <div id="demo-content" class="demo-panel">
+                        <div class="demo-description">
+                            <h3>AI Content Generator</h3>
+                            <p>Create compelling, SEO-optimized content for your roofing business in seconds.</p>
+                        </div>
+                        <div class="demo-interactive">
+                            <div class="content-generator">
+                                <div class="generator-input">
+                                    <label for="contentTopic">What content do you need?</label>
+                                    <select id="contentTopic" class="content-select">
+                                        <option value="">Choose content type...</option>
+                                        <option value="blog">Blog Post: Signs You Need a New Roof</option>
+                                        <option value="social">Social Media: Roof Maintenance Tips</option>
+                                        <option value="email">Email: Seasonal Roofing Promotion</option>
+                                        <option value="landing">Landing Page: Emergency Repairs</option>
+                                    </select>
+                                    <button id="generateContentBtn" class="btn btn-primary">Generate Content</button>
+                                </div>
+                                <div id="generatedContent" class="generated-content" style="display: none;">
+                                    <div class="content-header">
+                                        <h4>Generated Content</h4>
+                                        <button class="btn-copy">Copy</button>
+                                    </div>
+                                    <div id="contentOutput" class="content-output"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">Comprehensive AI-powered solutions for roofing businesses</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Chatbot Integration</h3>
+                    <p>24/7 automated customer engagement that answers questions, books appointments, and captures leads while you focus on roofing.</p>
+                    <ul class="service-features">
+                        <li>Custom trained on your services</li>
+                        <li>Multilingual support</li>
+                        <li>CRM integration</li>
+                        <li>Performance analytics</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>SEO & Local Marketing</h3>
+                    <p>Dominate local search results and attract more customers actively searching for roofing services in your area.</p>
+                    <ul class="service-features">
+                        <li>Local SEO optimization</li>
+                        <li>Google My Business management</li>
+                        <li>Review generation & management</li>
+                        <li>Monthly reporting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Website Design & Development</h3>
+                    <p>Professional, mobile-responsive websites designed to convert visitors into customers with modern design and fast performance.</p>
+                    <ul class="service-features">
+                        <li>Custom roofing designs</li>
+                        <li>Mobile-first approach</li>
+                        <li>Lead capture optimization</li>
+                        <li>Fast loading speeds</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p>Consistent, engaging social media presence that builds trust and keeps your business top-of-mind for potential customers.</p>
+                    <ul class="service-features">
+                        <li>Content creation & scheduling</li>
+                        <li>Community engagement</li>
+                        <li>Ad campaign management</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>PPC Advertising</h3>
+                    <p>Targeted paid advertising campaigns that deliver qualified leads and maximize your return on investment.</p>
+                    <ul class="service-features">
+                        <li>Google Ads management</li>
+                        <li>Facebook & Instagram ads</li>
+                        <li>A/B testing optimization</li>
+                        <li>Conversion tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>Content Marketing</h3>
+                    <p>AI-powered content creation that educates customers, improves SEO, and positions your business as a roofing authority.</p>
+                    <ul class="service-features">
+                        <li>Blog writing & optimization</li>
+                        <li>Video content strategy</li>
+                        <li>Email marketing campaigns</li>
+                        <li>Educational resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ready to Transform Your Roofing Business?</h2>
+                    <p>Let's discuss how our AI-powered solutions can help you generate more leads, close more deals, and grow your roofing business.</p>
+                    <div class="contact-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Free initial consultation</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>Custom strategy session</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>ROI-focused approach</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✓</span>
+                            <span>No long-term contracts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <h3>Get Started Today</h3>
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="contactPhone" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactCompany" placeholder="Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Tell us about your goals..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Request Consultation</button>
+                    </form>
+                    <div id="contactSuccess" class="form-success" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Thank You!</h3>
+                        <p>We'll be in touch within 24 hours to discuss your marketing needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Beyond AI Marketing</h4>
+                    <p>Empowering roofing businesses with cutting-edge AI technology and proven marketing strategies.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#audit">Live Audit</a></li>
+                        <li><a href="#demo">Live Demo</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">AI Chatbot</a></li>
+                        <li><a href="#services">SEO & Marketing</a></li>
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Beyond AI Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
