@@ -355,16 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // In production, this would send data to a server
-            const formData = {
-                name: document.getElementById('contactName').value,
-                email: document.getElementById('contactEmail').value,
-                phone: document.getElementById('contactPhone').value,
-                company: document.getElementById('contactCompany').value,
-                message: document.getElementById('contactMessage').value
-            };
-
-            console.log('Form submitted:', formData);
-
+            // For now, just show success message
+            
             // Show success message
             contactForm.style.display = 'none';
             contactSuccess.style.display = 'block';
@@ -389,4 +381,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Set current year in footer
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 });
